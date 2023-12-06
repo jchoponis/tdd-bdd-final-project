@@ -243,7 +243,7 @@ class TestProductRoutes(TestCase):
             self.assertEqual(item["available"], test_available)
 
     def test_list_all_products(self):
-        products = self._create_products(10)
+        self._create_products(10)
         response = self.client.get(BASE_URL)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.get_json()), 10)
